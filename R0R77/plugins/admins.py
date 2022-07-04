@@ -17,7 +17,7 @@ async def _(event):
 
     await event.edit(PLAY_TEXT, buttons=[[Button.inline("« رجوع", data="help")]])
 
-@R0R77.on(events.NewMessage(pattern="^[!?/]رفع ?(.*)"))
+@R0R77.on(events.NewMessage(pattern="/رفع"))
 @is_admin
 async def promote(event, perm):
     if event.is_private:
@@ -47,7 +47,7 @@ async def promote(event, perm):
 
     await event.reply(f"تم بنجاح رفع المستخدم {input_str} in {event.chat.title}")
  
-@R0R77.on(events.NewMessage(pattern="^[!?/]تنزيل ?(.*)"))
+@R0R77.on(events.NewMessage(pattern="/تنزيل"))
 @is_admin
 async def promote(event, perm):
     if event.is_private:
@@ -77,7 +77,7 @@ async def promote(event, perm):
     await event.reply(f"- تم بنجاح تنزيل {input_str} in {event.chat.title}")
  
 
-@R0R77.on(events.NewMessage(pattern="^[!?/]الرابط"))
+@R0R77.on(events.NewMessage(pattern="/الرابط"))
 async def invitelink(event):
 
     if event.is_private:
@@ -89,38 +89,38 @@ async def invitelink(event):
 ADMIN_TEXT = """
 **✘ جميع اوامر الادمن تحتاج الى ان تكون مشرف**
 
-!رفع
+/رفع
 ( لرفع المستخدم مشرف )
 
-!تنزيل
+/تنزيل
 ( لتنزيل المستخدم من رتبة الاشراف بالرد عليه )
 
-!الرابط
+/الرابط
 لجلب رابط المجموعه فقط ارسل الامر
 
-!انهاء
+/انهاء
 لأنهاء التشغيل في المكالمه
 
-!تخطي
+/تخطي
 لتخطي التشغيل الحالي
 
-!ايقاف
+/ايقاف
 لايقاف التشغيل مؤقتا
 
-!استئناف
+/استئناف
 لاستئناف التشغيل في المكالمه
 
-!مغادرة
+/مغادرة
 لمغادرة المجموعة بشكل اجباري
 
-!التشغيل
+/التشغيل
 لعرض قائمى التشغيل الحالية في المجموعة
 """
 
 PLAY_TEXT = """
 **✘ اوامر المستخدمين العاديين!**
 
-!تشغيل
+/تشغيل
 لتشغيل المقطع الصوتي في المكالمه اكتب الامر 
 
 """
