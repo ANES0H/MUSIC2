@@ -130,7 +130,7 @@ btnn =[
 
 
 #play
-@R0R77.on(events.NewMessage(pattern="^[?!/]تشغيل"))
+@R0R77.on(events.NewMessage(pattern="/تشغيل"))
 async def play(event):
     title = ' '.join(event.text[5:])
     replied = await event.get_reply_message()
@@ -227,7 +227,7 @@ async def play(event):
 
 
 #end
-@R0R77.on(events.NewMessage(pattern="^[/?!]انهاء"))
+@R0R77.on(events.NewMessage(pattern="/انهاء"))
 @is_admin
 async def vc_end(event, perm):
     chat_id = event.chat_id
@@ -245,7 +245,7 @@ async def vc_end(event, perm):
 
 
 
-@R0R77.on(events.NewMessage(pattern="^[?!/]فيديو"))
+@R0R77.on(events.NewMessage(pattern="/فيديو"))
 async def vplay(event):
     if Config.HEROKU_MODE == "ENABLE":
         await event.reply("- لا يمكنك استخدام هذا الامر لانك تستخدم هيروكو في التنصيب")
@@ -408,7 +408,7 @@ async def vplay(event):
 
 
 #playlist
-@R0R77.on(events.NewMessage(pattern="^[?!/]التشغيل"))
+@R0R77.on(events.NewMessage(pattern="/التشغيل"))
 @is_admin
 async def vc_playlist(event, perm):
     chat_id = event.chat_id
@@ -438,7 +438,7 @@ async def vc_playlist(event, perm):
 
 
 #كود المغادرة
-@R0R77.on(events.NewMessage(pattern="^[?!/]مغادرة"))
+@R0R77.on(events.NewMessage(pattern="/مغادره"))
 @is_admin
 async def leavevc(event, perm):
     razan = await event.reply("- يرجى الانتظار قليلا")
@@ -455,7 +455,7 @@ async def leavevc(event, perm):
 
 
 
-@R0R77.on(events.NewMessage(pattern="^[?!/]تخطي"))
+@R0R77.on(events.NewMessage(pattern="/تخطي"))
 @is_admin
 async def vc_skip(event, perm):
     chat_id = event.chat_id
@@ -484,7 +484,7 @@ async def vc_skip(event, perm):
             await event.reply(DELQUE)
 
 
-@R0R77.on(events.NewMessage(pattern="^[?!/]ايقاف"))
+@R0R77.on(events.NewMessage(pattern="/ايقاف"))
 @is_admin
 async def vc_pause(event, perm):
     chat_id = event.chat_id
@@ -499,7 +499,7 @@ async def vc_pause(event, perm):
 
 
 
-@R0R77.on(events.NewMessage(pattern="^[?!/]استئناف"))
+@R0R77.on(events.NewMessage(pattern="/استئاف"))
 @is_admin
 async def vc_resume(event, perm):
     chat_id = event.chat_id
