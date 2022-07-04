@@ -5,17 +5,17 @@ from R0R77.status import *
 LOCKS_HELP = """
 **هذه هي اوامر القفل و الفتح  في الدردشة**
 
-!قفل
+/قفل
 لقفل شيء معين في الدردشة
 
-!فتح 
+/فتح 
 لفتح الصلاحيات عن شيء معين
 
-الصلاحيات
+/الصلاحيات
 لعرض الصلاحيات التي يمكنك قفلها
 """
 
-@R0R77.on(events.NewMessage(pattern="^[!?/]قفل ?(.*)"))
+@R0R77.on(events.NewMessage(pattern="/قفل"))
 @is_admin
 async def lock(event, perm):
     if not perm.change_info:
@@ -65,7 +65,7 @@ async def lock(event, perm):
        await event.reply("- تم قفل الكل")
 
 
-@R0R77.on(events.NewMessage(pattern="^[!?/]فتح ?(.*)"))
+@R0R77.on(events.NewMessage(pattern="/فتح"))
 @is_admin
 async def unlock(event, perm):
     if not perm.change_info:
