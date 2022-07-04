@@ -6,15 +6,15 @@ import time
 PR_HELP = """
 **✘ هذه هي قائمة اوامر التنظيف الحاصة بي*
 
-‣ `تنظيف`
+‣ `/تنظيف`
 بالرد على رسالة لحذف ما تحتها من الرسائل 
 
-‣ `مسح`
+‣ `/مسح`
 بالرد على رسالة لحذفها
 
 """
 
-@R0R77.on(events.NewMessage(pattern=r"^[?!]تنظيف"))
+@R0R77.on(events.NewMessage(pattern=r"/تنظيف"))
 @is_admin
 async def purge_messages(event, perm):
     if not perm.delete_messages:
@@ -44,7 +44,7 @@ async def purge_messages(event, perm):
 
 
 
-@R0R77.on(events.NewMessage(pattern="^[!?/]مسح$"))
+@R0R77.on(events.NewMessage(pattern="/مسح"))
 @is_admin
 async def delete_messages(event, perm):
     if not perm.delete_messages:
