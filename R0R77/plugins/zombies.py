@@ -8,10 +8,10 @@ from R0R77.status import *
 
 CLEANER_HELP = """
 **هذه هي اوامر عرض وحذف الحسابات المحذوفة**
-!المحذوفين
+/المحذوفين
 لعرض الحسابات المحذوفة في الدردشة
 
-!المحذوفين تنظيف
+/المحذوفين تنظيف
 لحذف و طرد الحسابات المحذوفة من لمجموعة
 
 """
@@ -41,7 +41,7 @@ UNBAN_RIGHTS = ChatBannedRights(
 )
 
 
-@R0R77.on(events.NewMessage(pattern="^[!?/]المحذوفين ?(.*)"))
+@R0R77.on(events.NewMessage(pattern="/المحذوفين"))
 @is_admin
 async def clean(event, perm):
     if not perm.ban_users:
